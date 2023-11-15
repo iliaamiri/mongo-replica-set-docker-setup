@@ -1,0 +1,15 @@
+name: mongodb_for_prisma
+version: "3.1"
+services:
+  mongo:
+    build: ./mongodb-rs
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: db
+      MONGO_REPLICA_HOST: 192.168.1.18
+      MONGO_REPLICA_PORT: "27017"
+    ports:
+      - 27017:27017
+
